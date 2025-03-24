@@ -10,4 +10,5 @@ public class MsCatalogoApplication {
         SpringApplication.run(MsCatalogoApplication.class, args);
     }
 
+
 }
