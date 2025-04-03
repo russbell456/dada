@@ -1,7 +1,7 @@
 spring:
   application:
-    name: ms-compras
+    name: ms-compra-service
   profiles:
     active: development
   config:
-    import: optional:configserver:http://root:123456@localhost:7a070
+    import: optional:configserver:http://root:123456@localhost:7070

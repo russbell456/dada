@@ -11,13 +11,12 @@ import java.util.Optional;
 @RestController
 @RequestMapping("/compras")
 public class CompraController {
-
     @Autowired
     private CompraService compraService;
 
     @GetMapping
     public List<Compra> listar() {
-        return compraService.obtenerTodas();
+        return compraService.listar();
     }
 
     @GetMapping("/{id}")

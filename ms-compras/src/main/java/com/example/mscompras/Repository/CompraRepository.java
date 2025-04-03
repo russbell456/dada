@@ -1,8 +1,9 @@
 package com.example.mscompras.Repository;
 
+import com.example.mscompras.Entity.Compra;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Repository;
 import java.util.List;
 
-@Repository
-public interface CompraRepository extends JpaRepository<Compra, Long>                                                             <
+public interface CompraRepository extends JpaRepository<Compra, Long> {
+    List<Compra> findByCategoria(String categoria);
+}
