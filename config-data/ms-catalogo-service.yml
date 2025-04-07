@@ -23,7 +23,7 @@ springdoc:
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://localhost:8040/eureka
+      defaultZone: http://localhost:8033/eureka
   instance:
     hostname: localhost
 
