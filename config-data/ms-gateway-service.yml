@@ -5,7 +5,7 @@ server:
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://localhost:8040/eureka
+      defaultZone: http://localhost:8090/eureka
       #defaultZone: ${EUREKA_URI:http://localhost:8090/eureka}
   instance:
     hostname: localhost
@@ -19,7 +19,7 @@ spring:
         locator:
           enable: true
       routes:
-        - id: ms-producto-service
-          uri: lb://producto-service
+        - id: ms-catalogo-service
+          uri: lb://ms-catalogo-service
           predicates:
-            - Path=/producto/**
+            - Path=/category/**
