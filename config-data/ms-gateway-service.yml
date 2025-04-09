@@ -11,7 +11,7 @@ spring:
           enabled: true
       routes:
         - id: ms-catalogo-service
-          uri: lb://ms-catalogo-service
+          uri: lb://MS-CATALOGO-SERVICE
           predicates:
             - Path=/categorias/**
         - id: ms-producto-service
