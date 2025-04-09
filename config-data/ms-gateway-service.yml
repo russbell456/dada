@@ -1,18 +1,12 @@
 server:
   port: 8085
 
-eureka:
-  client:
-    serviceUrl:
-      defaultZone: http://localhost:8090/eureka
-      #defaultZone: ${EUREKA_URI:http://localhost:8090/eureka}
-  instance:
-    hostname: localhost
-    #instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
 spring:
+  application:
+    name: gateway-service
+
   cloud:
     gateway:
-
       discovery:
         locator:
           enabled: true
@@ -21,26 +15,19 @@ spring:
           uri: lb://ms-catalogo-service
           predicates:
             - Path=/categorias/**
-    server:
-      port: 8085
 
-    eureka:
-      client:
-        serviceUrl:
-          defaultZone: http://localhost:8090/eureka
-          #defaultZone: ${EUREKA_URI:http://localhost:8090/eureka}
-      instance:
-        hostname: localhost
-        #instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
-    spring:
-      cloud:
-        gateway:
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8090/eureka
+  instance:
+    hostname: localhost
 
-          discovery:
-            locator:
-              enable: true
-          routes:
-            - id: ms-catalogo-service
-              uri: lb://ms-catalogo-service
-              predicates:
-                - Path=/categorias/**
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    gateway:
+      enabled: true
