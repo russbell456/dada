@@ -1,14 +1,9 @@
 server:
   port: 8030
 
-eureka:
-  client:
-    serviceUrl:
-      defaultZone: http://localhost:8090/eureka
-  instance:
-    hostname: localhost
-
 spring:
+  application:
+    name: gateway-service
   cloud:
     gateway:
       discovery:
@@ -18,12 +13,19 @@ spring:
         - id: ms-catalogo-service
           uri: lb://ms-catalogo-service
           predicates:
-            - Path=/categorias, /categorias/**
+            - Path=/categorias/**
         - id: ms-producto-service
           uri: lb://ms-producto-service
           predicates:
-            - Path=/productos, /productos/**
+            - Path=/productos/**
         - id: ms-pago-service
           uri: lb://ms-pago-service
           predicates:
-            - Path=/pagos, /pagos/**
+            - Path=/pagos/**
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8090/eureka
+  instance:
+    hostname: localhost
