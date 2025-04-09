@@ -1,7 +1,11 @@
 server:
 
   port: 8081
+
+
 spring:
+  application:
+    name: ms-catalogo-service
   datasource:
     url: jdbc:h2:mem:ms_catalogo
     driver-class-name: org.h2.Driver
