@@ -20,12 +20,12 @@ spring:
         - id: ms-catalogo-service
           uri: lb://ms-catalogo-service
           predicates:
-            - Path=/categorias/**
+            - Path=/categorias, /categorias/**
         - id: ms-producto-service
           uri: lb://ms-producto-service
           predicates:
-            - Path=/productos/**
+        - Path=/productos, /productos/**
         - id: ms-pago-service
           uri: lb://ms-pago-service
           predicates:
-            - Path=/pagos/**
+        - Path=/pagos, /pagos/**
